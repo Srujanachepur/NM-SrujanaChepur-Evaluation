@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable({
+        "processing" : true,
+        "ajax" : {
+            "url" : "http://localhost:8085/TacoContributorResponse/result",
+            dataSrc : ''
+        },
+        "columns" : [ {
+            "data" : "full_name"
+        }, {
+            "data" : "username"
+        }]
+    });
+});
+</script>
+</head>
+
+<body style="background-color:#B0E0E6;">
+	
+<div style="background-color:#FFA07A;" class="jumbotron text-center">
+  <h1>Taco Contributors</h1>
+
+</div>
+<div style="background-color:#FAFAD2;" class="container">
+<div class="table-responsive"> 
+<table style="background-color:#FAFAD2;" id="example" class="table" cellspacing="1" width="100%">
+     <thead>
+		 <div class="row">
+         <tr>
+			 <div class="col-sm-4">
+             <th>Full Name</th>
+			 </div>
+			 <div class="col-sm-4">
+             <th>User Name</th>
+		     </div>
+         </tr>
+	 </div>
+        </thead>
+ </table>
+</div>
+</div>
+
+</body>
+</html>
